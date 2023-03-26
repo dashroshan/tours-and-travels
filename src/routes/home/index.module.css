@@ -43,6 +43,11 @@
     background-size: 300% 100%;
     display: flex;
     align-items: center;
+    transition: .4s ease-in-out;
+}
+
+.headerBtn:hover {
+    scale: 0.97;
 }
 
 .btnBlack {
@@ -62,7 +67,7 @@
 }
 
 .headerLogo {
-    width: 25rem;
+    width: 30rem;
 }
 
 @media (max-width: 1000px) {
@@ -73,8 +78,8 @@
     }
 
     .headerLogo {
-        width: 70vw;
-        max-width: 25rem;
+        width: 90vw;
+        max-width: 30rem;
     }
 
     .headerText {
