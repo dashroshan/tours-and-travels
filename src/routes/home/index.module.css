@@ -288,14 +288,17 @@
 
 .reviewCardWrap {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2.5rem;
     margin: 2.5rem 0;
+    max-width: 93vw;
 }
 
 @media (max-width:1530px) {
-    .reviewCardWrap {
+    /* .reviewCardWrap {
         flex-direction: column;
-    }
+    } */
 
     .reviewCard {
         max-width: 88vw;
