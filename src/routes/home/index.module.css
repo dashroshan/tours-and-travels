@@ -1,0 +1,327 @@
+.header {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 0;
+    gap: 5rem;
+    background: #f8f8f8;
+}
+
+.headerText {
+    width: 30rem;
+}
+
+.headerText>div:nth-of-type(1) {
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.headerText>div:nth-of-type(2) {
+    font-weight: bold;
+    font-size: 3.5rem;
+    line-height: 3.8rem;
+    margin-bottom: 1.5rem;
+}
+
+
+.headerText>div:nth-of-type(3) {
+    opacity: 0.65;
+    margin-bottom: 1.5rem;
+}
+
+.headerBtn {
+    width: fit-content;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    border-radius: 0.4rem;
+    box-shadow: 0 10px 15px 0 rgba(255, 83, 48, .35);
+    padding: 1.1rem 1.5rem;
+    background-image: linear-gradient(to right, #ff4c30, #ff6830, #fff, #f3806f);
+    background-size: 300% 100%;
+    display: flex;
+    align-items: center;
+}
+
+.btnBlack {
+    background-image: linear-gradient(to right, #000000, #1e1e1e, #fff, #000000);
+    box-shadow: 0 10px 15px 0 rgba(123, 123, 123, 0.35);
+}
+
+.headerBtn img {
+    filter: invert();
+    width: 1.3rem;
+    margin-right: 0.8rem;
+}
+
+.headerBtnsWrap {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.headerLogo {
+    width: 25rem;
+}
+
+@media (max-width: 1000px) {
+    .header {
+        flex-direction: column-reverse;
+        padding: min(15vw, 5rem) 0;
+        gap: min(15vw, 5rem);
+    }
+
+    .headerLogo {
+        width: 70vw;
+        max-width: 25rem;
+    }
+
+    .headerText {
+        width: 90vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .headerBtnsWrap {
+        flex-direction: column;
+    }
+}
+
+.location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.5rem;
+    padding: 5rem 0;
+    background: #f8f8f8;
+}
+
+.location iframe {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, .1);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background: white;
+    border: 0.1rem black solid;
+}
+
+.sectionHead {
+    font-weight: bold;
+    font-size: 3rem;
+    max-width: 30rem;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .sectionHead {
+        max-width: 90vw;
+    }
+}
+
+@media (max-width: 870px) {
+    .location iframe {
+        width: 85vw;
+        padding: 0.75rem;
+        height: 100vw;
+    }
+
+}
+
+.carSection {
+    background: #f8f8f8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 0;
+}
+
+.carHead {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.carHead>div:nth-of-type(1) {
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.carHead>div:nth-of-type(2) {
+    font-weight: bold;
+    font-size: 3.5rem;
+    line-height: 3.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.cardCardImg {
+    width: 25rem;
+    height: 20rem;
+    border-radius: 0.75rem 0.75rem 0 0;
+    overflow: hidden;
+}
+
+.cardCardImg>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carCard {
+    border-radius: 0.75rem;
+    padding: 0.5rem;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, .1);
+}
+
+.carCardText {
+    margin: 0.5rem 1.2rem;
+    margin-top: 1.3rem;
+    max-width: 22.6rem;
+}
+
+.aboutCar {
+    font-size: 0.8rem;
+    margin-top: 0.6rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.carCardTitle {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.carCardPrice {
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.cardCardInfo {
+    display: flex;
+    gap: 0.7rem;
+    align-items: center;
+}
+
+.carWrap {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    width: 95vw;
+    justify-content: center;
+}
+
+@media (max-width: 480px) {
+    .cardCardImg {
+        width: 85vw;
+        height: 20rem;
+    }
+
+    .carWrap {
+        gap: min(2.5rem, 7.5vw);
+    }
+
+    .carCardText {
+        max-width: calc(85vw - 2.4rem);
+    }
+}
+
+.bookHook {
+    margin: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5.5rem;
+}
+
+.footer {
+    margin: 0;
+    padding: 5rem 0;
+    background: white;
+}
+
+.bookHook .carHead {
+    margin-bottom: 0;
+}
+
+.whatsappBtn {
+    box-shadow: 0 10px 15px 0 rgba(57, 200, 85, 0.35);
+    background-image: linear-gradient(to right, #1dbf3d, #3bd64a, #fff, #43df53);
+}
+
+.bottomBtns {
+    align-items: center;
+}
+
+.reviewCard {
+    background: white;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, .1);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    width: 25rem;
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.rcText {
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.starIcon {
+    width: 1.5rem;
+}
+
+.rating {
+    display: flex;
+    gap: 0.25rem;
+    margin-bottom: 1.3rem;
+}
+
+.reviewCardWrap {
+    display: flex;
+    gap: 2.5rem;
+    margin: 2.5rem 0;
+}
+
+@media (max-width:1530px) {
+    .reviewCardWrap {
+        flex-direction: column;
+    }
+
+    .reviewCard {
+        max-width: 88vw;
+        height: unset;
+        box-sizing: border-box;
+    }
+}
+
+.servicesOffered img {
+    width: 1.5rem;
+}
+
+.servicesOffered {
+    font-size: 1.3rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 80rem;
+}
+
+.serviceOff {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+@media (max-width: 985px) {
+    .servicesOffered {
+        flex-direction: column;
+        width: unset;
+        gap: 0.75rem;
+    }
+}
