@@ -11,7 +11,7 @@ export default function AdminPage() {
             try {
                 const response = await axios.get(window.APIROOT + "data");
                 setData(response.data);
-                console.log(response.data);
+                window.APIDATALOADED = true;
             } catch (error) {
                 console.log(error)
             }
