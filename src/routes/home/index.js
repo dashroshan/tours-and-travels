@@ -1,6 +1,7 @@
 import classes from "./index.module.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { HashLink } from "react-router-hash-link";
 
 import logoImg from "../../assets/logo.svg";
 import iconCall from "../../assets/call.svg";
@@ -35,7 +36,7 @@ export default function HomePage() {
                     <div>Affordable and hassle-free self-drive cars for rental in Indore. Give us a call now to reserve the car of your choice and make your journey comfortable.</div>
                     <div className={classes.headerBtnsWrap}>
                         <a href={`tel:${apiData.call}`} style={{ textDecoration: "inherit", color: "inherit" }}><div className={classes.headerBtn}><img src={iconCall} alt="call" /><span>CALL US</span></div></a>
-                        <div className={classes.headerBtn + " " + classes.btnBlack}><img src={iconCar} alt="location" /><span>AVAILABLE CARS</span></div>
+                        <HashLink style={{ textDecoration: 'inherit', color: 'inherit' }} to="#vechiles"><div className={classes.headerBtn + " " + classes.btnBlack}><img src={iconCar} alt="location" /><span>AVAILABLE CARS</span></div></HashLink>
                     </div>
                 </div>
                 <div className={classes.headerLogo}>
@@ -67,7 +68,7 @@ export default function HomePage() {
                 </div>
             </section>
 
-            <section className={classes.carSection}>
+            <section className={classes.carSection} id="vechiles">
                 <div className={classes.carHead}>
                     <div>Vechile Models</div>
                     <div>Our <span style={{ color: "#ff4d30" }}>Rental Fleet</span></div>

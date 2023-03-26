@@ -49,6 +49,8 @@ export default function AdminPage() {
                 <input type="text" value={apiData.whatsapp} onChange={(e) => setData({ ...apiData, "whatsapp": e.target.value })} />
                 <div>Location</div>
                 <input type="text" value={apiData.location} onChange={(e) => setData({ ...apiData, "location": e.target.value })} />
+                <div>Review link</div>
+                <input type="text" value={apiData.writereview} onChange={(e) => setData({ ...apiData, "writereview": e.target.value })} />
             </p>
             <h1>Reviews</h1>
             {
