@@ -20,6 +20,7 @@ export default function HomePage() {
                 const response = await axios.get(window.APIROOT + "data");
                 setData(response.data);
                 console.log(response.data);
+                window.APIDATALOADED = true;
             } catch (error) {
                 console.log(error)
             }
@@ -126,16 +127,20 @@ export default function HomePage() {
 
             <section className={classes.location}>
                 <div className={classes.sectionHead}>Our services are available <span style={{ color: "#ff4d30" }}>24x7</span></div>
-                <iframe
-                    title="maps"
-                    width="800"
-                    height="450"
-                    style={{ border: 0 }}
-                    loading="lazy"
-                    allowfullscreen
-                    referrerpolicy="no-referrer-when-downgrade"
-                    src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyAcAIpEFWAMwPUMSv8xgQvj2l8ObqKIcFY&q=${apiData.location}`}>
-                </iframe>
+                {
+                    apiData.location ?
+                        <iframe
+                            title="maps"
+                            width="800"
+                            height="450"
+                            style={{ border: 0 }}
+                            loading="lazy"
+                            allowfullscreen
+                            referrerpolicy="no-referrer-when-downgrade"
+                            src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyAcAIpEFWAMwPUMSv8xgQvj2l8ObqKIcFY&q=${apiData.location}`}>
+                        </iframe>
+                        : null
+                }
             </section>
 
             <section className={classes.bookHook + " " + classes.footer}>
