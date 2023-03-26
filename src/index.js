@@ -5,7 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 
-window.APIROOT = 'http://localhost:4000/';
+// window.APIROOT = 'http://localhost:4000/';
+window.APIROOT = 'https://api.boomcar.in/';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
