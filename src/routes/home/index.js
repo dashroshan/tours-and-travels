@@ -11,8 +11,24 @@ import iconStar from "../../assets/star.svg";
 import iconCheck from "../../assets/checkbox.svg";
 import iconWhatsapp from "../../assets/whatsapp.svg";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, {
+    Navigation,
+    Pagination,
+    Autoplay,
+    Virtual
+} from "swiper/core";
+import "swiper/swiper-bundle.css";
+import "./swiperCustom.css";
+import { useMediaQuery } from 'react-responsive';
+
+SwiperCore.use([Navigation, Pagination, Autoplay, Virtual]);
+
 export default function HomePage() {
     const [apiData, setData] = useState({ "reviews": [], "vechiles": [] });
+
+    const slides2 = useMediaQuery({ query: '(min-width:910px) and (max-width:1370px)' });
+    const slides1 = useMediaQuery({ query: '(max-width:910px)' });
 
     useEffect(() => {
         const fetchData = async () => {
@@ -141,6 +157,54 @@ export default function HomePage() {
                         </iframe>
                         : null
                 }
+            </section>
+
+            <section className={classes.bookHook}>
+                <div className={classes.carHead}>
+                    <div>Look into our services</div>
+                    <div>BoomCar <span style={{ color: "#ff4d30" }}>Gallery</span></div>
+                </div>
+                <Swiper
+                    className={classes.swiper}
+                    id="swiper"
+                    slidesPerView={slides1 ? 1 : (slides2 ? 2 : 3)}
+                    spaceBetween={0}
+                    autoplay={{
+                        delay: 3000,
+                        disableOnInteraction: false,
+                    }}
+                    pagination={{
+                        clickable: true
+                    }}
+                    speed={500}
+                    loop
+                >
+                    <SwiperSlide key="slide-1" style={{ listStyle: "none" }}>
+                        <div className={classes.galleryCard}>
+                            <img src="https://i.imgur.com/YmR6krXl.webp" alt="gallery" />
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide key="slide-2" style={{ listStyle: "none" }}>
+                        <div className={classes.galleryCard}>
+                            <img src="https://i.imgur.com/YmR6krXl.webp" alt="gallery" />
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide key="slide-3" style={{ listStyle: "none" }}>
+                        <div className={classes.galleryCard}>
+                            <img src="https://i.imgur.com/YmR6krXl.webp" alt="gallery" />
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide key="slide-4" style={{ listStyle: "none" }}>
+                        <div className={classes.galleryCard}>
+                            <img src="https://i.imgur.com/YmR6krXl.webp" alt="gallery" />
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide key="slide-5" style={{ listStyle: "none" }}>
+                        <div className={classes.galleryCard}>
+                            <img src="https://i.imgur.com/YmR6krXl.webp" alt="gallery" />
+                        </div>
+                    </SwiperSlide>
+                </Swiper>
             </section>
 
             <section className={classes.bookHook + " " + classes.footer}>
