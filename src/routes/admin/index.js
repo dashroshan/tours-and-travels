@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function AdminPage() {
-    const [apiData, setData] = useState({ "reviews": [], "vechiles": [] });
+    const [apiData, setData] = useState({ "reviews": [], "vechiles": [], "gallery": [] });
     const [creds, setCreds] = useState({ "username": "", "password": "" });
 
     useEffect(() => {
@@ -130,6 +130,35 @@ export default function AdminPage() {
                     setData({ ...apiData, "vechiles": vechiles });
                 }
             }>Add new vechile</h3>
+
+            <h1>Gallery</h1>
+            {
+                apiData.gallery.map((e, id) => {
+                    return <p>
+                        <h3>[ {id + 1} ]</h3>
+                        <h3 className={classes.delete} onClick={
+                            () => {
+                                let gallery = apiData.gallery;
+                                gallery.splice(id, 1);
+                                setData({ ...apiData, "gallery": gallery });
+                            }
+                        }>Delete image</h3>
+                        <div>Image link</div>
+                        <input type="text" value={e} onChange={(e) => {
+                            let gallery = apiData.gallery;
+                            gallery[id] = e.target.value;
+                            setData({ ...apiData, "gallery": gallery });
+                        }} />
+                    </p>
+                })
+            }
+            <h3 className={classes.btn} onClick={
+                () => {
+                    let gallery = apiData.gallery;
+                    gallery.push("");
+                    setData({ ...apiData, "gallery": gallery });
+                }
+            }>Add new image</h3>
             <h3 className={classes.btn} onClick={saveChanges}>Save changes</h3>
         </div>
     );

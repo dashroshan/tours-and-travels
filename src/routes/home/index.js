@@ -25,7 +25,7 @@ import { useMediaQuery } from 'react-responsive';
 SwiperCore.use([Navigation, Pagination, Autoplay, Virtual]);
 
 export default function HomePage() {
-    const [apiData, setData] = useState({ "reviews": [], "vechiles": [] });
+    const [apiData, setData] = useState({ "reviews": [], "vechiles": [], "gallery": [] });
 
     const slides2 = useMediaQuery({ query: '(min-width:910px) and (max-width:1370px)' });
     const slides1 = useMediaQuery({ query: '(max-width:910px)' });
@@ -138,7 +138,7 @@ export default function HomePage() {
                         })
                     }
                 </div>
-                <div className={classes.headerBtn}><img src={iconWrite} alt="call" /><span>WRITE A REVIEW</span></div>
+                <a href={apiData.writereview} style={{ textDecoration: "inherit", color: "inherit" }}><div className={classes.headerBtn}><img src={iconWrite} alt="call" /><span>WRITE A REVIEW</span></div></a>
             </section>
 
             <section className={classes.location}>
@@ -179,31 +179,13 @@ export default function HomePage() {
                     speed={500}
                     loop
                 >
-                    <SwiperSlide key="slide-1" style={{ listStyle: "none" }}>
-                        <div className={classes.galleryCard}>
-                            <img src="https://i.imgur.com/YmR6krXl.webp" alt="gallery" />
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide key="slide-2" style={{ listStyle: "none" }}>
-                        <div className={classes.galleryCard}>
-                            <img src="https://i.imgur.com/YmR6krXl.webp" alt="gallery" />
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide key="slide-3" style={{ listStyle: "none" }}>
-                        <div className={classes.galleryCard}>
-                            <img src="https://i.imgur.com/YmR6krXl.webp" alt="gallery" />
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide key="slide-4" style={{ listStyle: "none" }}>
-                        <div className={classes.galleryCard}>
-                            <img src="https://i.imgur.com/YmR6krXl.webp" alt="gallery" />
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide key="slide-5" style={{ listStyle: "none" }}>
-                        <div className={classes.galleryCard}>
-                            <img src="https://i.imgur.com/YmR6krXl.webp" alt="gallery" />
-                        </div>
-                    </SwiperSlide>
+                    {apiData.gallery.map((e, id) => {
+                        return <SwiperSlide key={`slide-${id}`} style={{ listStyle: "none" }}>
+                            <div className={classes.galleryCard}>
+                                <img src={e} alt="gallery" />
+                            </div>
+                        </SwiperSlide>
+                    })}
                 </Swiper>
             </section>
 
